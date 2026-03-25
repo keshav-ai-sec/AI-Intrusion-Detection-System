@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Intrusion Detection System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            color: #38bdf8;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #22c55e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #16a34a;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AI-Based Intrusion Detection System</h1>
+
+    <form action="/predict">
+        <button type="submit">Test Sample Traffic</button>
+    </form>
+
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+
+</body>
+</html>
