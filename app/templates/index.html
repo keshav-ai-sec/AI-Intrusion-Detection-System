@@ -1,52 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AI Intrusion Detection System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: white;
-            text-align: center;
-            padding-top: 100px;
-        }
-
-        h1 {
-            color: #38bdf8;
-        }
-
-        button {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: #22c55e;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: white;
-        }
-
-        button:hover {
-            background-color: #16a34a;
-        }
-
-        .result {
-            margin-top: 30px;
-            font-size: 22px;
-            font-weight: bold;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Threat Intelligence Dashboard</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    
+    <!-- Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    
+    <div class="dashboard-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <h2>Shield<span>AI</span></h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">Live Dashboard</li>
+                    <li>Threat Analytics</li>
+                    <li>System Logs</li>
+                    <li>Settings</li>
+                </ul>
+            </nav>
+            <div class="status-indicator">
+                <span class="dot pulse-green"></span> System Online
+            </div>
+        </aside>
 
-    <h1>AI-Based Intrusion Detection System</h1>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1 class="page-title">Threat Intelligence Platform</h1>
+                    <p class="subtitle">Real-time Network Anomaly Detection</p>
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="Admin">
+                </div>
+            </header>
 
-    <form action="/predict">
-        <button type="submit">Test Sample Traffic</button>
-    </form>
+            <!-- Stats Row -->
+            <section class="stats-grid">
+                <div class="stat-card glass-panel">
+                    <h3>Total Packets Analyzed</h3>
+                    <h2 id="total-analyzed">0</h2>
+                </div>
+                <div class="stat-card glass-panel">
+                    <h3>Threats Blocked</h3>
+                    <h2 id="threats-blocked" class="danger-text">0</h2>
+                </div>
+                <div class="stat-card glass-panel">
+                    <h3>Active Models</h3>
+                    <h2 id="active-models">1</h2>
+                </div>
+                <div class="stat-card glass-panel">
+                    <h3>System Status</h3>
+                    <h2 id="system-status" class="safe-text">Secure</h2>
+                </div>
+            </section>
 
-    <div class="result">
-        {{ prediction_text }}
+            <!-- Live Traffic Stream -->
+            <section class="live-traffic-section glass-panel">
+                <div class="section-header">
+                    <h3>Live Packet Inference Stream</h3>
+                    <button id="toggle-stream" class="btn primary-btn">Pause Stream</button>
+                </div>
+                <div class="table-container">
+                    <table class="traffic-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Source IP</th>
+                                <th>Destination IP</th>
+                                <th>Protocol/Port</th>
+                                <th>Confidence</th>
+                                <th>Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody id="traffic-table-body">
+                            <!-- Rows dynamically populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
     </div>
 
+    <!-- Chart.js for future enhancements (optional) -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
